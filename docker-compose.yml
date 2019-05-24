@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        WORKDIR: $PWD
+        RUBY_VERSION: 2.6.3
+        NODE_VERSION: 10.15.3 
+    ports:
+     - "3000:3000"
+    volumes:
+     - $PWD:$PWD
